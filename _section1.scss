@@ -1,0 +1,174 @@
+.section1 {
+  @include mobile {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    @include desktop {
+      height: 80px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &-left-side {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+
+      img {
+        width: 120px;
+        height: 35px;
+        margin-left: 10px;
+
+        @include tablet {
+          margin-left: 20px;
+        }
+
+        @include desktop {
+          margin-left: 70px;
+          width: 135px;
+          height: 40px;
+        }
+      }
+    }
+
+    &-right-side {
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        width: 100%;
+
+        a {
+          color: white;
+          text-decoration: none;
+          margin-right: 20px;
+          font-weight: bold;
+
+          &:hover {
+            color: rgb(158, 158, 158);
+          }
+        }
+
+        .line {
+          pointer-events: none;
+        }
+      }
+
+      @include desktop {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        width: 100%;
+        margin-right: 30px;
+
+        a {
+          color: white;
+          text-decoration: none;
+          margin-right: 40px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &-burger {
+      @include mobile {
+        margin-right: 0px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+
+      @include desktop {
+        display: none;
+      }
+
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      width: 100%;
+
+      &-button {
+        width: 25px;
+        height: 25px;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-size: 20px;
+        @include FlexCenter;
+        border: none;
+        margin-right: 5px;
+
+        &:focus + ul {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &:hover {
+          color: rgb(170, 170, 170);
+        }
+      }
+
+      &-button-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 1055px;
+        background-color: rgb(0, 0, 0);
+        display: none;
+        position: absolute;
+        margin-top: 1000px;
+
+        @include tablet {
+          width: 400px;
+          height: 1024px;
+          margin-top: 974px;
+          margin-right: -10px;
+
+          img {
+          }
+        }
+
+        a {
+          color: rgb(255, 255, 255);
+          text-decoration: none;
+          font-size: 28px;
+          font-weight: bold;
+          width: fit-content;
+          margin: 20px 0 0 50px;
+
+          &:hover {
+            color: rgb(126, 126, 126);
+          }
+        }
+
+        .sign-up,
+        .log-in,
+        .line {
+          font-size: 24px;
+          font-weight: normal;
+        }
+
+        .line {
+          pointer-events: none;
+        }
+
+        .dropdown-logo {
+          img {
+            width: 120px;
+            height: 35px;
+            margin-top: 150px;
+          }
+        }
+      }
+    }
+  }
+}

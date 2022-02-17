@@ -1,0 +1,153 @@
+.section7 {
+  @include mobile {
+    height: 1000px;
+    border-top: 1px solid rgb(255, 255, 255);
+    background-color: black;
+
+    @include tablet {
+      height: 550px;
+    }
+
+    @include desktop {
+      height: 480px;
+    }
+
+    .section7-up-left-side {
+      @include tablet {
+        display: flex;
+      }
+
+      &-logo {
+        width: 120px;
+        height: 35px;
+        margin: 10px 0 30px 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &-title {
+        color: rgb(126, 126, 126);
+        font-weight: bold;
+        margin: 60px 0 0 20px;
+
+        @include tablet {
+          margin-left: 50px;
+        }
+
+        @include desktop {
+          margin-left: 170px;
+        }
+
+        ul {
+          margin-top: 20px;
+          color: rgb(255, 255, 255);
+
+          li {
+            margin-top: 10px;
+            display: block;
+            cursor: pointer;
+            width: fit-content;
+
+            &:hover {
+              color: rgb(126, 126, 126);
+            }
+          }
+        }
+      }
+    }
+
+    .section7-up-right-side {
+      height: 60px;
+      margin-top: 40px;
+      display: flex;
+
+      @include tablet {
+        @include FlexCenter;
+        margin-top: 100px;
+      }
+
+      @include desktop {
+        width: 100%;
+        display: flex;
+        justify-content: left;
+      }
+
+      &-icons {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: left;
+        margin-left: 20px;
+
+        i {
+          color: white;
+          font-size: 40px;
+          cursor: pointer;
+
+          &:hover {
+            color: rgb(126, 126, 126);
+          }
+        }
+      }
+    }
+
+    .section7-down {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      &-left-side {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+
+        @include tablet {
+          @include FlexCenter;
+          flex-direction: row;
+        }
+
+        a {
+          color: rgb(126, 126, 126);
+          text-decoration: none;
+          font-size: 12px;
+          width: fit-content;
+          margin-top: 5px;
+
+          @include tablet {
+            margin-left: 20px;
+          }
+
+          @include desktop {
+            margin-top: -120px;
+          }
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+
+      &-right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+
+        a,
+        i {
+          color: rgb(126, 126, 126);
+          font-size: 12px;
+          text-decoration: none;
+
+          @include desktop {
+            margin-top: -50px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.section5 {
+  @include mobile {
+    .section5-up {
+      height: 120px;
+      @include FlexCenter;
+      font-size: 32px;
+      color: black;
+      font-weight: bold;
+      border-bottom: 1px solid rgb(170, 170, 170);
+    }
+
+    .section5-down {
+      display: flex;
+      flex-direction: column;
+
+      .dropdown {
+        border-bottom: 1px solid rgb(170, 170, 170);
+
+        .dropdown-button {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          align-items: center;
+          height: 120px;
+          width: 100%;
+          cursor: pointer;
+          background-color: rgb(240, 240, 240);
+          color: rgb(0, 0, 0);
+          font-size: 16px;
+          outline: none;
+          border: none;
+          text-align: left;
+          font-weight: bold;
+          border-left: 1px solid rgb(170, 170, 170);
+          border-right: 1px solid rgb(170, 170, 170);
+
+          @include tablet {
+            height: 120px;
+            font-size: 22px;
+          }
+
+          &:focus + .dropdown-info {
+            display: flex;
+            flex-direction: column;
+            cursor: default;
+            background-color: rgb(255, 255, 255);
+            border-left: 1px solid rgb(170, 170, 170);
+            border-right: 1px solid rgb(170, 170, 170);
+          }
+
+          &:focus {
+            background-color: rgb(255, 255, 255);
+            color: black;
+            border-left: 1px solid rgb(170, 170, 170);
+            border-right: 1px solid rgb(170, 170, 170);
+            pointer-events: none;
+          }
+
+          &:hover {
+            background-color: rgb(220, 220, 220);
+          }
+        }
+
+        .dropdown-info {
+          display: none;
+          padding: 10px;
+          text-align: justify;
+          margin-top: -12px;
+
+          div {
+            margin-top: 10px;
+          }
+
+          ol {
+            padding-left: 15px;
+
+            li {
+              padding-top: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

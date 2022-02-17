@@ -1,0 +1,46 @@
+.section6 {
+  @include mobile {
+    height: 400px;
+    @include FlexCenter;
+    flex-direction: column;
+    background: linear-gradient(180deg, #8400ff, #a726ac);
+
+    @include tablet {
+      height: 350px;
+    }
+
+    @include desktop {
+      height: 450px;
+    }
+
+    &-text {
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+
+      @include tablet {
+        font-size: 42px;
+      }
+    }
+
+    &-link {
+      margin-top: 60px;
+      a {
+        border: 2px solid white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 25px;
+        text-decoration: none;
+        background-color: rgb(255, 255, 255);
+        letter-spacing: 1px;
+
+        &:hover {
+          background-color: #a726ac;
+          color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+}
